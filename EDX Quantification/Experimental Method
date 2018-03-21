@@ -1,0 +1,46 @@
+The following guidelines serve as a method for how to collect quantitative EDX data from the TEM using the standards based
+EDX cross section approach. This method has been specificallt written for a FEI Titan ChemiSTEM with Gatan Enfinium
+Spectrometer. However it should be relative easily transferable to other microscope setups.
+
+STEP ONE:
+
+A standard sample is needed for each element to be quantified. In the case of metals should be a pure element 
+sample. It may also be possible to quantify using stoichiometric compounds for those elements which cannot easily be abtained
+in pure form. 
+
+A wedge sample should be prepared in the FIB with a wedge angle of between 0.5 and 1.5 Degrees. This angle needs to be large
+enough that the sample is stable under the beam and the point of x-ray absorption is visible in the sample. It should also be
+small enough that there is a reasonable range of thicknesses in the linear regime for which to do a line scan over.
+
+The angle of the wedge can be experimentally determined using a t/lambda analysis and the workbook entitled 'Wedge - EELS
+Analysis'. A useful tool to determine lamba can be found at the following link:
+
+http://tpm.amc.anl.gov/NJZTools/NTLambdaV2.html
+
+Once the angle for each of the elemental wedge standards has been determined, proceed to step two.
+
+STEP TWO - Probe Current Measurements:
+
+For each EDX map an accurate probe current measurement needs to be taken. Ideally this should include an error bar in the
+measurement for subsequent error analysis. The simplest method available in most microscopes is to use the Gatan EELS
+Spectrometer, outlined below. Alternatively, a Picoammeter could be used, however it needs to be built into the microscope
+rather than in a specimen holder such that repeat measurements can be made for every EDX map.
+
+1. Check that there is no voltage bias applied to the spectrometer prism, in the Filter Control box. This should be done at
+least half an hour prior to making the probe current measurement to allow time for the prism to relax again. Otherwise a dark
+current will interfere with our probe current measurement.
+
+2. Next, in Digital micrograph, make sure you are in 'Superuser mode'. Change the 'Primary Voltage' to less than 50% of the
+incident beam energy ie for a 200kV incident beam energy, lower the beam energy in the spectrometer down to 100 or 80kV. This
+is so that the beam is no longer deflected sufficiently by the prism, instead it will plough completely into the side.
+
+3. Find a hole in the specimen.
+
+4. In the case of some spectrometers we also need to run one more program. With some spectrometers (to protect the detector)
+the shutter only opens during an acquisition, unless we run a program to force it to stay open. On the microscope controlling
+computer, a program such as ShutterControl should be run. 
+
+5. In the global tags under “DriftTubeCurrent” is the tag “print”. If you set this to 1 then the output readings will also be
+written into the results window. This will allow a plotting of the current readout with time so that the jump and error can
+be measure. Finally, run the ProbeCurrent plugin in Digital Micrograph. Start the measurement with the screen down and then
+lift and screen up whilst the measurement is taking place.
